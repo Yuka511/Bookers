@@ -1,12 +1,10 @@
 <h1>Books</h1>
-<p>Title</p>
+<p class ="table">Title</p>
 <% @books.each do |book| %>
-  <span>
-      <%= link_to book.title, book_path(book.id) %>
-  </span>
+  <span><%= book.title %></span>
 <% end %>
 
-<p>Body</p>
+<p class ="table">Body</p>
 <% @books.each do |book| %>
   <span><%= book.body %></span>
 <% end %>
@@ -17,7 +15,7 @@
     <td>
       <%= link_to "Show", book_path(book) %>
       <%= link_to "Edit", edit_book_path(book) %>
-      <%= link_to "Destroy", book_path(book) ,method: :delete, "data-confirm" => "Are you sure?" %>
+      <%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "Are you sure?" %>
     </td>
   </tr>
 <% end %>
